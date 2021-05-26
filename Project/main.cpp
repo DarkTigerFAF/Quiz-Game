@@ -1,14 +1,46 @@
 #include <bits/stdc++.h>
 #include <fstream>
 using namespace std;
-int t;
+int t;string temp;
 struct Input{
     string qu,ansr;
     int ri;
 };
+Input ques[5][20];
+map<string,pair<int,int>> mp;
+void CheckUser(string name,int turn){
+    if(turn == 2){
+        if(mp[name].second){
+            cout<<"This player is already registered, would you like to reset score ? [YES/NO] : ";
+            cin>>temp;
+            if(temp == "YES") mp[name].first = 0;
+        }
+    }
+}
+int ask(int field,string player){
+    int ans,q;
+    for(int i=0;i<5;i++){
+        srand(time(NULL));
+        q = rand() % 20;
+        cout<<ques[field][q].qu<<endl<<ques[field][q].ansr<<endl<<"Choose an answer [1-4]: ";
+        cin>>ans;
+        if(ans == ques[field][q].ri){
+            cout<<"You got it right!"<<endl;
+            mp[player].first++;
+            mp[player].second = max(mp[player].first,mp[player].second);
+        }else {cout<<"You got it wrong!"<<endl; return -1;}
+    }
+    return 1;
+}
+void Save(){
+    ofstream oFile;oFile.open("Scores.txt");
+    for(auto it = mp.begin();it != mp.end();it++)
+        oFile<<it->first<<" "<<it->second.first<<" "<<it->second.second<<endl;
+    oFile<<"eof";
+    oFile.close();
+}
 int main()
 {
-    Input ques[5][20];
     ifstream inFile;inFile.open("Input.txt");
     string a,b;int ans;
     for(int i=0;i<5;i++){
@@ -21,7 +53,6 @@ int main()
     inFile.close();
     ifstream Score;Score.open("Scores.txt");
     string name;int cur,hi;
-    map<string,pair<int,int>> mp;
     while(!Score.eof()){
         Score>>name;
         if(name == "eof") break;
@@ -33,53 +64,28 @@ int main()
     int indx;cin>>indx;
     t = 5;while(t--){if(cin.fail() || (indx<1 || indx > 2)) {if(!t){cout<<"Goodbye!";return 0;}cout<<"Please enter a valid number [1-2] "<<t<<" tries left.";} else t = 0;}
     string pName;
-    cout<<"Enter your username : ";
-    if(indx == 2){
-        cin>>pName;
-        if(mp[pName].second){
-            cout<<"This player is already registered, would you like to reset score ? : ";
-            string tryy;cin>>tryy;
-            if(tryy == "yes") mp[name].first = 0;
-        }
-    }else
-        cin>>pName;
+    cout<<"Enter your username : ";cin>>pName;CheckUser(pName,indx);
     cout<<"Please choose a field [1-5]"<<endl;
     cout<<"1.Capitals 2.History 3.Sports 4.Math 5.Disease"<<endl;
     while(cin>>indx){
         indx--;
         if(indx < 0 || indx > 4){
-            cout<<"You have to enter a number between 1 and 5"<<endl;
-            continue;
+            cout<<"You have to enter a number between 1 and 5"<<endl; continue;
         }else break;
     }
-    bool lost = false;
-    for(int i=0;i<5;i++){
-        int q = rand() % 20;
-        cout<<ques[indx][q].qu<<endl<<ques[indx][q].ansr<<endl<<"Choose an answer [1-4]: ";
-        int tryy;cin>>tryy;
-        if(tryy == ques[indx][q].ri){
-            cout<<"You got it right!"<<endl<<endl;
-            mp[pName].first++;
-            mp[pName].second = max(mp[pName].first,mp[pName].second);
-        }else {cout<<"You got it wrong!"<<endl<<endl;lost = true;break;}
+    if(ask(indx,pName) == -1){
+        cout<<"Game Over!!"<<endl;
+        Save();
+        return 0;
     }
-    if(!lost){
-            for(int i=0;i<5;i++){
-            int q = rand() % 20;
-            cout<<ques[indx][q].qu<<endl<<ques[indx][q].ansr<<endl<<"Choose an answer [1-4]: ";
-            int tryy;cin>>tryy;
-            if(tryy == ques[indx][q].ri){
-                cout<<"You got it right!"<<endl;
-                mp[pName].first++;
-                mp[pName].second = max(mp[pName].first,mp[pName].second);
-            }else {cout<<"You got it wrong!"<<endl;lost = true;}
-        }
+    cout<<"Wow! You've reached round 2"<<endl<<"Would you like to change fields ? [YES/NO] : ";
+    cin>>temp; if(temp == "YES") cin>>indx;
+    if(ask(indx,pName) == -1){
+        cout<<"Game Over!!"<<endl;
+        Save();
+        return 0;
     }
-    cout<<"Game Over!"<<endl;
-    ofstream oFile;oFile.open("Scores.txt");
-    for(auto it = mp.begin();it != mp.end();it++)
-        oFile<<it->first<<" "<<it->second.first<<" "<<it->second.second<<endl;
-    oFile<<"eof";
-    oFile.close();
+    cout<<"You have won the GAME!!"<<endl;
+    Save();
     return 0;
 }
