@@ -1,8 +1,9 @@
 #include <bits/stdc++.h>
 #include <fstream>
+#include <climits>
 using namespace std;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
-int t,cur,hi;string temp,sname;
+int t,cur,hi,indx;string temp,sname;
 struct Input{
     string qu,ansr;
     int ri;
@@ -42,6 +43,20 @@ void Save(){
     oFile<<"eof";
     oFile.close();
 }
+void Field(int turn){
+    if(turn){
+        cout<<"Wow! You've reached round 2"<<endl<<"Would you like to change fields ? [YES/NO] : ";
+        cin>>temp; if(temp != "YES") return;
+    }
+    cout<<"1.Capitals"<<endl<<"2.History"<<endl<<"3.Sports"<<endl<<"4.Math"<<endl<<"5.Disease"<<endl;
+    cout<<"Enter number of the field [1-5] : "<<endl;
+    while(cin>>indx){
+        indx--;
+        if(indx < 0 || indx > 4){
+            cout<<"Enter a valid number [1-5] : "<<endl; continue;
+        }else break;
+    }
+}
 int main()
 {
     ifstream inFile;inFile.open("Input.txt");
@@ -62,26 +77,23 @@ int main()
         mp[sname] = {cur,hi};
     }
     Score.close();
-    cout<<"Welcome to Quiz Game"<<endl<<"Press 1 to load profile or 2 to start a new game : ";
-    int indx;cin>>indx;
-    t = 5;while(t--){if(cin.fail() || (indx<1 || indx > 2)) {if(!t){cout<<"Goodbye!";return 0;}cout<<"Please enter a valid number [1-2] "<<t<<" tries left.";} else t = 0;}
-    string pName;
-    cout<<"Enter your user name [Don't insert spaces]: ";cin>>pName;CheckUser(pName,indx);
-    cout<<"Please choose a field [1-5]"<<endl;
-    cout<<"1.Capitals 2.History 3.Sports 4.Math 5.Disease"<<endl;
-    while(cin>>indx){
-        indx--;
-        if(indx < 0 || indx > 4){
-            cout<<"You have to enter a number between 1 and 5"<<endl; continue;
+    cout<<"Welcome to Quiz Game"<<endl<<"1. Start a new game"<<endl<<"2. Load game"<<endl<<"Enter number [1-2] : ";
+    int in;cin>>in;
+    t = 5;
+    while(t--){
+        if(cin.fail() || in < 1 || in > 2){
+            cout<<"Enter a valid number [1-2] ("<<t<<" tries left) : "; cin>>in;
         }else break;
     }
+    string pName;
+    cout<<"Enter your user name (Don't insert spaces) : ";cin>>pName;CheckUser(pName,in);
+    Field(0);
     if(ask(indx,pName) == -1){
         cout<<"Game Over!!"<<endl;
         Save();
         return 0;
     }
-    cout<<"Wow! You've reached round 2"<<endl<<"Would you like to change fields ? [YES/NO] : ";
-    cin>>temp; if(temp == "YES")cin>>indx;// {cout<<"Please enter cin>>indx;
+    Field(1);
     if(ask(indx,pName) == -1){
         cout<<"Game Over!!"<<endl;
         Save();
