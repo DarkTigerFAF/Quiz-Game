@@ -49,6 +49,20 @@ void Save(){
     oFile<<"eof";
     oFile.close();
 }
+void ShowScore(){
+    for(auto it = mp.begin();it != mp.end();it++){
+        if(it != mp.begin()){}else cout<<"Name : ";
+        cout<<it->first<<"  ";
+    }cout<<endl;
+    for(auto it = mp.begin();it != mp.end();it++){
+        if(it != mp.begin()){}else cout<<"Current Score : ";
+        cout<<it->second.first<<"  ";
+    }cout<<endl;
+    for(auto it = mp.begin();it != mp.end();it++){
+        if(it != mp.begin()){}else cout<<"Highest Score : ";
+        cout<<it->second.second<<"  ";
+    }cout<<endl;cout<<endl;
+}
 void Field(int turn){
     if(turn){
         cout<<"Wow! You've reached round 2"<<endl<<"Would you like to change fields ? [YES/NO] : ";
@@ -85,14 +99,18 @@ int main()
         mp[sname] = {cur,hi};
     }
     Score.close();
-    cout<<"Welcome to Quiz Game"<<endl<<"1. Start a new game"<<endl<<"2. Load game"<<endl<<"Enter number [1-2] : ";
-    int in;cin>>in;
-    t = 5;
-    while(t--){
-        if(!t){cout<<"Good Bye!"<<endl;return 0;}
-        else if(cin.fail() || in < 1 || in > 2){
-            cout<<"Enter a valid number [1-2] ("<<t<<" tries left) : ";clr(in);
-        }else break;
+    cout<<"Welcome to Quiz Game"<<endl;int in = 3;
+    while(in == 3){
+        cout<<"1. Start a new game"<<endl<<"2. Load game"<<endl<<"3. Show leaderboards"<<endl<<"Enter number [1-3] : ";
+        cin>>in;
+        t = 5;
+        while(t--){
+            if(!t){cout<<"Good Bye!"<<endl;return 0;}
+            else if(cin.fail() || in < 1 || in > 3){
+                cout<<"Enter a valid number [1-3] ("<<t<<" tries left) : ";clr(in);
+            }else break;
+        }
+        if(in == 3) ShowScore();
     }
     string pName;
     cout<<"Enter your user name (Don't insert spaces) : ";cin>>pName;CheckUser(pName,in);
