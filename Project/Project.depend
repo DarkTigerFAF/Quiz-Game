@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1621987045 source:c:\users\darktiger n\desktop\desktop\mazencodes\project\main.cpp
+	<bits/stdc++.h>
+	<fstream>
+

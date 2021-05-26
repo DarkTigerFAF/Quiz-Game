@@ -1,0 +1,100 @@
+What is the capital of Oslo ?"1.Norway 2.Uruguay 3.Montenegro 4.Kuwait" 1
+What is the capital of Havana?"1.Rwanda 2.Cuba 3.New Zealand 4.Bolivia" 2
+What is the capital of Dili?"1.Iceland 2.Qatar 3.East Timor 4.Latvia" 3
+What is the capital of Skopje?"1.North Macedonia 2.Tanzania 3.Taiwan (Republic of China) 4.Thailand" 1
+What is the capital of Madrid?"1.Liberia 2.Yemen 3.Comoros 4.Spain" 4
+What is the capital of Bangkok?"1.North Korea 2.Thailand 3.Bahrain 4.Greece" 2
+What is the capital of Paramaribo?"1.The Bahamas 2.Honduras 3.Cambodia 4.Suriname" 4
+What is the capital of Bandar Seri Begawan?"1.Netherlands 2.Angola 3.Brunei 4.Ireland" 3
+What is the capital of Beirut?"1.Portugal 2.United Kingdom 3.Lebanon 4.Guatemala" 3
+What is the capital of Saint John's?"1.Antigua and Barbuda 2.Nauru 3.Comoros 4.South Sudan" 1
+What is the capital of Antananarivo?"1.Luxembourg 2.United Kingdom 3.Madagascar 4.Singapore" 3
+What is the capital of Dhaka?"1.Belarus 2.Eritrea 3.Ecuador 4.Bangladesh" 4
+What is the capital of Windhoek?"1.Republic of the Congo 2.Australia 3.Namibia 4.Mali" 3
+What is the capital of Addis Ababa?"1.Barbados 2.Czech Republic 3.Ethiopia 4.Peru" 3
+What is the capital of Gaborone?"1.Botswana 2.Syria 3.United Kingdom 4.Myanmar (Burma)" 1
+What is the capital of Nicosia?"1.Cyprus 2.Cameroon 3.Ethiopia 4.Belize" 1
+What is the capital of Pretoria, Bloemfontein, and Cape Town?"1.Bhutan 2.Slovakia 3.Canada 4.South Africa" 4
+What is the capital of San Marino?"1.San Marino 2.Ghana 3.Mongolia 4.Belize" 1
+What is the capital of Asmara?"1.Madagascar 2.Laos 3.Eritrea 4.Switzerland" 3
+What is the capital of Rome?"1.Italy 2.Solomon Islands 3.Greece 4.Madagascar" 1
+How many republics made up the former Soviet Union?"1. 15 2. 12 3. 10 4. 20" 1
+When was the first Nobel Prize in economics awarded?"1. 1909 2. 1949 3. 1929 4.1969" 4
+Which book was written by Niccolò Machiavelli?"1.The Good Earth 2.The Once and Future King 3.The Prince 4.War and Peace" 3
+Of what country was Simón Bolívar president?"1.Chile 2.Bolivia 3.Argentina 4.Peru" 4
+Which Indian president was involved in the struggle for Irish independence?"1. V.V. Giri 2. Gulzarilal Nanda 3. S. Radhakrishnan 4. Neelam Sanjiva Reddy" 1
+Who was Karl Marx’s associate and fellow political theoretician?"1.Friedrich Reich 2.Friedrich Engels 3.Friedrich Nietzsche 4.Friedrich II" 2
+Where were the Aegean Bronze Age civilizations located?"1.Spain 2.India 3.Greece 4.Algeria" 3
+Which of these battles did not involve Roman soldiers?"1.Cannae 2.Chalons 3.Thermopylae 4.Arretium" 3
+During which year did Elizabeth II become queen of the United Kingdom and Northern Ireland?"1. 1901 2. 1944 3. 1952 4. 1963" 3
+Who was the last monarch of the house of Hanover?"1.George IV 2.Victoria 3.George III 4.William IV" 2
+Which French king arranged the suppression and then the destruction of the order of the Knights Templars?"1.Louis IX 2.Louis XVIII 3.Philip II 4.Philip IV" 4
+Who was the first Tudor king of England?"1.Edward VII 2.Henry VII 3.William I 4.Richard III" 2
+Which dictator immortalized the words “Veni, vidi, vici”?"1.Alexander the Great 2.Kublai Khan 3.Napoleon I 4.Julius Caesar" 4
+What was Charles Edward, the Young Pretender, also known as?"1.The Jolly Prince 2.Bonnie Prince Charlie 3.The Roving Prince 4.Merry Prince Charles" 2
+Which ruler of the Hanoverian dynasty was known as the “Sailor King”?"1.George II 2.George III 3.George I 4.William IV" 4
+Who invented the weapon called the revolver?"1.Bat Masterson 2.Samuel Colt 3.Thaddeus Fokker 4.George Spadding" 2
+Where was the bayonet invented?"1.Bayport, Connecticut 2.Bayonne, France 3.Bombay, India 4.Barcelona, Spain" 2
+What war was also called The Great War?"1.The Cold War 2.World War II 3.World War I 4.The Civil War" 3
+What was the Peloponnesian War named for?"1.a place 2.an Athenian admiral 3.a Spartan general 4.a battle" 1
+Who won the Battle of Trafalgar?"1.France 2.the United States 3.Germany 4.Great Britain" 4
+In Australian football, what is the maximum number of players allowed on the field at a time?"1. 36 2. 28 3. 40 4. 14" 1
+Where can you find arnis being widely practiced?"1.The Philippines 2.Suriname 3.China 4.India" 1
+What player was the first to win five straight Wimbledon tennis titles?"1.Andre Agassi 2.Arthur Ashe 3.Roger Federer 4.Bjorn Borg" 4
+Who ran the first four-minute mile?"1.Banastre Tarleton 2.Roger Ramjet 3.Roger Moore 4.Roger Bannister" 4
+In polo, what is a period of play called?"1.quarter 2.chukka 3.set 4.half" 2
+How many years old are horses that run in the Kentucky Derby?"1. 4 2. 3 3. 1 4. 2" 2
+In tennis, what follows a deuce?"1.adverb 2.advection 3.advertisement 4.advantag" 4
+In what sport would one find an Albion round?"1.badminton 2.tennis 3.croquet 4.archery" 4
+How many points is required for a win in association croquet?"1. 36 2. 12 3. 18 4. 26" 4
+What variation might one play in tennis?"1.Australian crawl 2.Australian lager 3.Australian rules 4.Australian doubles" 4
+What stick-and-ball sport has long been recognized as the national pastime of Ireland?"1.hurling 2.hockey 3.lacrosse 4.curling" 1
+Which athletic contest originated in Scotland and includes events such as tossing the caber?"1.Paralympics 2.sculling 3.Highland Games 4.Gaelic Games" 3
+In traditional Spanish bullfighting, what is the name given to the performer who both works the capes and kills the bull?"1.matador 2.troubadour 3.banderilla 4.rejoneo" 1
+Which is a court or lawn game played with lightweight rackets and a shuttlecock?"1.baseball 2.cricket 3.badminton 4.tennis" 3
+Which sport is considered the national summer sport of England?"1.hockey 2.cricket 3.football (soccer) 4.rugby" 2
+In what sport is a scrum used after the referee halts play for a minor infringement of the rules?"1.lacrosse 2.rugby 3.gridiron football 4.hockey" 2
+Which sport evolved as a combination of tennis and squash?"1.table tennis 2.royal tennis 3.platform tennis 4.deck tennis" 3
+What is the oldest professional sporting trophy in North America?"1.Canadian-American Challenge Cup 2.Stanley Cup 3.Grey Cup 4.Walker Cup" 2
+Which sport was directly influenced by the Marquess of Queensberry rules?"1.chess 2.billiards 3.boxing 4.fencing" 3
+Which sport is thought to have developed from the 18th-century English game of rounders?"1.football (soccer) 2.baseball 3.bowling 4.table tennis" 2
+In Roman numerals, what is represented by the letter C?"1. 50  2. 100  3. 10  4. 1,000" 2
+What is a polygon with three sides called?"1.rectangle 2.square 3.triangle 4.parallelogram" 3
+What unit of measurement is used to measure the height of horses and ponies?"1.shoulders 2.yards 3.feet 4.hands" 4
+Whose work gave rise to the terms algebra and algorithm?"1.Hypatia 2.al-Khwārizmī 3.al-Kāshī 4.Isaac Newton" 2
+Who gave the first proof of the fundamental theorem of algebra?"1.Blaise Pascal 2.Carl Friedrich Gauss 3.Ada Lovelace 4.Sophie Germain" 2
+The English mathematician and code breaker Alan Turing was found dead of cyanide poisoning after having been forced to undergo a year of hormone therapy to cure him of what?"1.schizophrenia 2.insomnia 3.homosexuality 4.depression" 3
+Which country was the first to use the metric system of measurement?"1.China 2.the United States 3.India 4.France" 4
+Which of the following is not a term used in geometry?"1.wrangle 2.pentagon 3.angle 4.triangle" 1
+What do we call the counting system that uses only 0 and 1?"1.binocular 2.bifurcated 3.binary 4.trinary" 3
+Who invented the Pythagorean theorem of right triangles?"1.Plato 2.Pythagoras 3.Polybius 4.Psammetichus" 2
+What is the name of an early calculator?"1.abracadabra 2.accordion 3.acanthus 4.abacus" 4
+What is the equivalent, in Fahrenheit, of 100 degrees centigrade?"1. 240  2. 212  3. 100  4. 200" 2
+What is a device used to work with numbers called?"1.generator 2.dilator 3.calculator 4.contractor" 3
+What part of a gram is a centigram?"1.one-tenth 2.one ten-thousandth 3.one one-thousandth 4.one one-hundredth" 4
+What is the numbering system used most often in counting and arithmetic?"1.decimal 2.tertiary 3.finger 4.binary" 1
+The metric system is based on multiples of what number?"1. 2  2. 5  3. 12  4. 10" 4
+In basic pasteurization, at what temperature is milk heated (in centigrade)?"1. 63  2. 50  3. 55  4. 38" 1
+In kilometers per second, what is the escape velocity needed for a rocket to leave Earth?"1. 1.5  2. 15.7  3. 11.2  4. 9.3" 3
+How many kilometers is a nautical mile?"1. 1.2  2. 1.6  3. 1.4  4. 1.8" 4
+How far is Betelgeuse from Earth?"1. 910 light-years  2. 520 light-years  3. 250 light-years  4. 800 light-years" 1
+What condition is caused by the deposition of salts of uric acid?"1.rheumatism 2.osteoporosis 3.arthritis 4.gout" 4
+Which disease is detected by using the Schilling test?"1.diabetes mellitus 2.pernicious anemia 3.leukemia 4.hemochromatosis" 2
+Which of these is not a form of colour blindness?"1.myopia 2.tritanopia 3.protanopia 4.deuteranopia" 1
+What is a more formal term for the disease called pinkeye?"1.astigmatism 2.conjunctivitis 3.exopthalmia 4.oculitis" 2
+What fat-soluble substance present in green leafy vegetables was given its name because it is required for coagulation of the blood to take place?"1.vitamin K 2.vitamin D 3.vitamin C 4.iron" 1
+What is eczema?"1.a stomach disorder 2.loss of memory 3.an inflammatory skin condition 4.a type of seaweed" 3
+Chiropody is a name for a medical specialty whose history can be traced to 1500 BCE in Egypt. Which part of the human body does chiropody deal with?"1.feet 2.brain 3.heart 4.eyes" 1
+When we suffer from belching, flatulence, aversion to eating, nausea, vomiting, diarrhea, constipation, and heartburn, we call it indigestion. Which word would have been used in 18th-century Britain to describe the same symptoms?"1.dropsy 2.dyspepsia 3.gout 4.grippe" 2
+In the 18th century, Englishman Stephen Hales inserted a tube into a blood vessel and allowed the blood to rise up the tube, thus measuring what aspect of circulation?"1.blood pressure 2.coagulation 3.heart rate 4.pulse" 1
+Which fever is also called “three-day fever”?"1.rat bite fever 2.trench fever 3.hay fever 4.pappataci fever" 4
+If you become infested with worms, what kind of drug will you need?"1.antimalarial 2.anthelmintic 3.antibiotic 4.antifungal" 2
+What is the full name of the medical scanning technique called PET?"1.positive energy therapy 2.potential energy treatment 3.passive excitation transmission 4.positron emission tomography" 4
+Which brain disorder results in a progressive and irreversible decline in memory and various other cognitive functions?"1.epilepsy 2.Huntington disease 3.Hansen disease 4.Alzheimer disease" 4
+Which of these diseases is called tabardillo in Mexico, where it killed the scientist who discovered how it was transmitted?"1.typhus 2.sleeping sickness 3.cholera 4.malaria" 1
+What does a dyslexic have trouble doing?"1.reading 2.maintaining eye-hand coordination 3.distinguishing right from left 4.remembering" 1
+Which of these vitamins is water-soluble as opposed to fat-soluble?"1.vitamin D 2.vitamin C 3.vitamin E 4.vitamin A" 2
+Which disease is caused by a deficiency of vitamin B12?"1.scurvy 2.night blindness 3.goitre 4.pernicious anemia" 4
+Astigmatism affects which part of the human body?"1.eyes 2.lymph nodes 3.elbows 4.kidneys" 1
+What is another name for breakbone fever?"1.yellow fever 2.typhoid 3.dengue 4.rhinitis" 3
+If a person has lockjaw, what disease is he or she suffering from?"1.tetanus 2.smallpox 3.cholera 4.impetigo" 1
