@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 #include <fstream>
-#include <climits>
 using namespace std;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int t,cur,hi,indx;string temp,sname;
@@ -12,10 +11,11 @@ int rnd(){
     uniform_int_distribution<int> uid(0,19);
     return uid(rng);
 }
+void clr(int &x){cin.clear();cin.ignore(numeric_limits<streamsize>::max(),'\n');cin>>x;}
 Input ques[5][20];
 map<string,pair<int,int>> mp;
 void CheckUser(string name,int turn){
-    if(turn == 2){
+    if(turn == 1){
         if(mp[name].second){
             cout<<"This player is already registered, would you like to reset score ? [YES/NO] : "; cin>>temp;
             if(temp == "YES") mp[name].first = 0;
@@ -27,7 +27,13 @@ int ask(int field,string player){
     for(int i=0;i<5;i++){
         q = rnd();
         cout<<ques[field][q].qu<<endl<<ques[field][q].ansr<<endl<<"Choose an answer [1-4]: ";
-        cin>>ans;
+        t = 5;cin>>ans;
+        while(t--){
+            if(!t){cout<<"Good Bye!"<<endl;return -1;}
+            else if(cin.fail() || ans < 1 || ans > 4){
+                cout<<"Enter a valid number [1-4] ("<<t<<" tries left) : ";clr(ans); continue;
+            }else break;
+        }
         if(ans == ques[field][q].ri){
             cout<<"You got it right!"<<endl;
             mp[player].first++;
@@ -49,11 +55,13 @@ void Field(int turn){
         cin>>temp; if(temp != "YES") return;
     }
     cout<<"1.Capitals"<<endl<<"2.History"<<endl<<"3.Sports"<<endl<<"4.Math"<<endl<<"5.Disease"<<endl;
-    cout<<"Enter number of the field [1-5] : "<<endl;
-    while(cin>>indx){
+    cout<<"Enter number of the field [1-5] : ";
+    t = 5;cin>>indx;
+    while(t--){
         indx--;
-        if(indx < 0 || indx > 4){
-            cout<<"Enter a valid number [1-5] : "<<endl; continue;
+        if(!t){cout<<"Good Bye!"<<endl;return;}
+        else if(indx < 0 || indx > 4){
+            cout<<"Enter a valid number [1-5] ("<<t<<" tries left) : ";clr(indx); continue;
         }else break;
     }
 }
@@ -81,20 +89,23 @@ int main()
     int in;cin>>in;
     t = 5;
     while(t--){
-        if(cin.fail() || in < 1 || in > 2){
-            cout<<"Enter a valid number [1-2] ("<<t<<" tries left) : "; cin>>in;
+        if(!t){cout<<"Good Bye!"<<endl;return 0;}
+        else if(cin.fail() || in < 1 || in > 2){
+            cout<<"Enter a valid number [1-2] ("<<t<<" tries left) : ";clr(in);
         }else break;
     }
     string pName;
     cout<<"Enter your user name (Don't insert spaces) : ";cin>>pName;CheckUser(pName,in);
-    Field(0);
+    Field(0);if(!t) return 0;
     if(ask(indx,pName) == -1){
+        if(!t) return 0;
         cout<<"Game Over!!"<<endl;
         Save();
         return 0;
     }
-    Field(1);
+    Field(1);if(!t) return 0;
     if(ask(indx,pName) == -1){
+        if(!t) return 0;
         cout<<"Game Over!!"<<endl;
         Save();
         return 0;
