@@ -1,18 +1,22 @@
 #include <bits/stdc++.h>
 #include <fstream>
 using namespace std;
-int t;string temp;
+mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+int t,cur,hi;string temp,sname;
 struct Input{
     string qu,ansr;
     int ri;
 };
+int rnd(){
+    uniform_int_distribution<int> uid(0,19);
+    return uid(rng);
+}
 Input ques[5][20];
 map<string,pair<int,int>> mp;
 void CheckUser(string name,int turn){
     if(turn == 2){
         if(mp[name].second){
-            cout<<"This player is already registered, would you like to reset score ? [YES/NO] : ";
-            cin>>temp;
+            cout<<"This player is already registered, would you like to reset score ? [YES/NO] : "; cin>>temp;
             if(temp == "YES") mp[name].first = 0;
         }
     }
@@ -20,8 +24,7 @@ void CheckUser(string name,int turn){
 int ask(int field,string player){
     int ans,q;
     for(int i=0;i<5;i++){
-        srand(time(NULL));
-        q = rand() % 20;
+        q = rnd();
         cout<<ques[field][q].qu<<endl<<ques[field][q].ansr<<endl<<"Choose an answer [1-4]: ";
         cin>>ans;
         if(ans == ques[field][q].ri){
@@ -52,19 +55,18 @@ int main()
     }
     inFile.close();
     ifstream Score;Score.open("Scores.txt");
-    string name;int cur,hi;
     while(!Score.eof()){
-        Score>>name;
-        if(name == "eof") break;
+        Score>>sname;
+        if(sname == "eof") break;
         Score>>cur>>hi;
-        mp[name] = {cur,hi};
+        mp[sname] = {cur,hi};
     }
     Score.close();
     cout<<"Welcome to Quiz Game"<<endl<<"Press 1 to load profile or 2 to start a new game : ";
     int indx;cin>>indx;
     t = 5;while(t--){if(cin.fail() || (indx<1 || indx > 2)) {if(!t){cout<<"Goodbye!";return 0;}cout<<"Please enter a valid number [1-2] "<<t<<" tries left.";} else t = 0;}
     string pName;
-    cout<<"Enter your username : ";cin>>pName;CheckUser(pName,indx);
+    cout<<"Enter your user name [Don't insert spaces]: ";cin>>pName;CheckUser(pName,indx);
     cout<<"Please choose a field [1-5]"<<endl;
     cout<<"1.Capitals 2.History 3.Sports 4.Math 5.Disease"<<endl;
     while(cin>>indx){
@@ -79,7 +81,7 @@ int main()
         return 0;
     }
     cout<<"Wow! You've reached round 2"<<endl<<"Would you like to change fields ? [YES/NO] : ";
-    cin>>temp; if(temp == "YES") cin>>indx;
+    cin>>temp; if(temp == "YES")cin>>indx;// {cout<<"Please enter cin>>indx;
     if(ask(indx,pName) == -1){
         cout<<"Game Over!!"<<endl;
         Save();
