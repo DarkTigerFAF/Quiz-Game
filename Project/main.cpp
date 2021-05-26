@@ -2,20 +2,21 @@
 #include <fstream>
 using namespace std;
 int t;
+struct Input{
+    string qu,ansr;
+    int ri;
+};
 int main()
 {
-    vector<vector<pair<string,pair<string,int>>>> ques;
+    Input ques[5][20];
     ifstream inFile;inFile.open("Input.txt");
-    vector<pair<string,pair<string,int>>> temp;
     string a,b;int ans;
     for(int i=0;i<5;i++){
-        temp.clear();
         for(int j=0;j<20;j++){
             a.clear();b.clear();ans = -1;
             getline(inFile,a,'"');getline(inFile,b,'"');inFile>>ans;
-            temp.push_back({a,{b,ans}});
+            ques[i][j].qu = a,ques[i][j].ansr = b,ques[i][j].ri = ans;
         }
-        ques.push_back(temp);
     }
     inFile.close();
     ifstream Score;Score.open("Scores.txt");
@@ -43,6 +44,7 @@ int main()
     }else
         cin>>pName;
     cout<<"Please choose a field [1-5]"<<endl;
+    cout<<"1.Capitals 2.History 3.Sports 4.Math 5.Disease"<<endl;
     while(cin>>indx){
         indx--;
         if(indx < 0 || indx > 4){
@@ -53,9 +55,9 @@ int main()
     bool lost = false;
     for(int i=0;i<5;i++){
         int q = rand() % 20;
-        cout<<ques[indx][q].first<<endl<<ques[indx][q].second.first<<endl<<"Choose an answer [1-4]: ";
+        cout<<ques[indx][q].qu<<endl<<ques[indx][q].ansr<<endl<<"Choose an answer [1-4]: ";
         int tryy;cin>>tryy;
-        if(tryy == ques[indx][q].second.second){
+        if(tryy == ques[indx][q].ri){
             cout<<"You got it right!"<<endl<<endl;
             mp[pName].first++;
             mp[pName].second = max(mp[pName].first,mp[pName].second);
@@ -64,21 +66,19 @@ int main()
     if(!lost){
             for(int i=0;i<5;i++){
             int q = rand() % 20;
-            cout<<ques[indx][q].first<<endl<<ques[indx][q].second.first<<endl<<"Choose an answer [1-4]: ";
+            cout<<ques[indx][q].qu<<endl<<ques[indx][q].ansr<<endl<<"Choose an answer [1-4]: ";
             int tryy;cin>>tryy;
-            if(tryy == ques[indx][q].second.second){
-                cout<<"You got it right!"<<endl<<endl;
+            if(tryy == ques[indx][q].ri){
+                cout<<"You got it right!"<<endl;
                 mp[pName].first++;
                 mp[pName].second = max(mp[pName].first,mp[pName].second);
-            }else {cout<<"You got it wrong!"<<endl<<endl;lost = true;}
+            }else {cout<<"You got it wrong!"<<endl;lost = true;}
         }
     }
     cout<<"Game Over!"<<endl;
     ofstream oFile;oFile.open("Scores.txt");
-    for(auto it = mp.begin();it != mp.end();it++){
-      //  cout<<it->first<<" "<<it->second.first<<" "<<it->second.second<<endl;
+    for(auto it = mp.begin();it != mp.end();it++)
         oFile<<it->first<<" "<<it->second.first<<" "<<it->second.second<<endl;
-    }
     oFile<<"eof";
     oFile.close();
     return 0;
