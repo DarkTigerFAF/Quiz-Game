@@ -1,19 +1,24 @@
 #include <bits/stdc++.h>
 #include <fstream>
 using namespace std;
-mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
-int t,cur,hi,indx;string temp,sname;
+// The next two lines are just to get a random number.
+random_device rd;
+mt19937 rng(rd());
 struct Input{
     string qu,ansr;
     int ri;
 };
+Input ques[5][20];
+map<string,pair<int,int>> mp;
+int t,cur,hi,indx;string temp,sname;
+// This function is just to get a random number.
 int rnd(){
     uniform_int_distribution<int> uid(0,19);
     return uid(rng);
 }
-void clr(int &x){cin.clear();cin.ignore(numeric_limits<streamsize>::max(),'\n');cin>>x;}
-Input ques[5][20];
-map<string,pair<int,int>> mp;
+// This function is to make sure that the user only enters an integer and doesn't enter a character.
+void clr(int &x){cin.clear();cin.ignore(100000,'\n');cin>>x;}
+// This function is to check if that player's name is already registered or if he's a new player.
 void CheckUser(string name,int turn){
     if(turn == 1){
         if(mp[name].second){
@@ -22,6 +27,7 @@ void CheckUser(string name,int turn){
         }
     }
 }
+// This function is to ask the player questions.
 int ask(int field,string player){
     int ans,q;
     for(int i=0;i<5;i++){
@@ -42,6 +48,7 @@ int ask(int field,string player){
     }
     return 1;
 }
+// This function is to save all the scores into the Scores file.
 void Save(){
     ofstream oFile;oFile.open("Scores.txt");
     for(auto it = mp.begin();it != mp.end();it++)
@@ -49,6 +56,7 @@ void Save(){
     oFile<<"eof";
     oFile.close();
 }
+// This function is to display the leaderboards.
 void ShowScore(){
     for(auto it = mp.begin();it != mp.end();it++){
         if(it != mp.begin()){}else cout<<"Name : ";
@@ -63,6 +71,7 @@ void ShowScore(){
         cout<<it->second.second<<"  ";
     }cout<<endl;cout<<endl;
 }
+// This function asks which field does the user want.
 void Field(int turn){
     if(turn){
         cout<<"Wow! You've reached round 2"<<endl<<"Would you like to change fields ? [YES/NO] : ";
@@ -79,8 +88,8 @@ void Field(int turn){
         }else break;
     }
 }
-int main()
-{
+void getFile(){
+    // Getting the questions from the file into the array
     ifstream inFile;inFile.open("Input.txt");
     string a,b;int ans;
     for(int i=0;i<5;i++){
@@ -91,6 +100,9 @@ int main()
         }
     }
     inFile.close();
+    
+    //---------------------------------------------------------------------------------
+    // Getting old score data
     ifstream Score;Score.open("Scores.txt");
     while(!Score.eof()){
         Score>>sname;
@@ -99,10 +111,14 @@ int main()
         mp[sname] = {cur,hi};
     }
     Score.close();
+}
+int main()
+{
     cout<<"Welcome to Quiz Game"<<endl;int in = 3;
     while(in == 3){
         cout<<"1. Start a new game"<<endl<<"2. Load game"<<endl<<"3. Show leaderboards"<<endl<<"Enter number [1-3] : ";
         cin>>in;
+        // This loop is to make sure that the user enters a number between [1 - 3], and the variable 't' stands for the number of tries the user got left;
         t = 5;
         while(t--){
             if(!t){cout<<"Good Bye!"<<endl;return 0;}
@@ -112,15 +128,21 @@ int main()
         }
         if(in == 3) ShowScore();
     }
-    string pName;
+    string pName; // pName is for the player's name, I'm asking the user to enter his name.
     cout<<"Enter your user name (Don't insert spaces) : ";cin>>pName;CheckUser(pName,in);
+    // CheckUser is to check if that player's name is already registered or if he's a new player.
     Field(0);if(!t) return 0;
+    // if function ask() returns -1 that means the player has lost and I'm closing the game for him.
     if(ask(indx,pName) == -1){
+        // if 't' equals zero it means that the user didn't enter a valid answer between [1 - 4] too many times.
         if(!t) return 0;
         cout<<"Game Over!!"<<endl;
         Save();
         return 0;
     }
+    
+    //-----------------------------------------------------------------------------------
+    // Second round of the game.
     Field(1);if(!t) return 0;
     if(ask(indx,pName) == -1){
         if(!t) return 0;
