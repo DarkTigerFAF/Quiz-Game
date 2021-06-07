@@ -49,14 +49,15 @@ int ask(int field,string player){
     int ans,q;
     for(int i=0;i<5;i++){
         q = rnd();
+        cout<<"_______________________________________________________"<<endl;
         cout<<ques[field][q].qu<<endl<<ques[field][q].ansr<<endl<<"Choose an answer [1-4]: ";
         t = 5;cin>>ans;
         if(!ErrorChecking(ans,1,4,1)) {leave = true;return -1;}
         if(ans == ques[field][q].ri){
-            cout<<"You got it right!"<<endl;
+            cout<<"You got it right!!"<<endl;
             mp[player].first++;
             mp[player].second = max(mp[player].first,mp[player].second);
-        }else {cout<<"You got it wrong!"<<endl; return -1;}
+        }else {cout<<endl<<"You got it wrong!"<<endl; return -1;}
     }
     return 1;
 }
@@ -118,7 +119,7 @@ void getFile(){
 int main()
 {
     getFile();
-    cout<<"Welcome to Quiz Game"<<endl;int in = 3;
+    cout<<"<<<<<<<<<<<<<<<<<<Welcome to Quiz Game>>>>>>>>>>>>>>>>>"<<endl;int in = 3;
     while(in == 3){
         cout<<"1. Start a new game"<<endl<<"2. Load game"<<endl<<"3. Show leaderboards"<<endl<<"Enter number [1-3] : ";
         cin>>in;
@@ -129,7 +130,7 @@ int main()
     string pName;
     cout<<"Enter your user name (Don't insert spaces) : ";cin>>pName;CheckUser(pName,in);
     Field(0);if(!t) return 0;
-
+    cout<<"_______________________________________________________"<<endl;
     if(ask(indx - 1,pName) == -1){
         if(leave) {Save();return 0;}
         cout<<"Game Over!!"<<endl;
@@ -139,10 +140,12 @@ int main()
     Field(1);if(!t) return 0;
     if(ask(indx - 1,pName) == -1){
         if(leave) {Save();return 0;}
+        cout<<"_______________________________________________________"<<endl;
         cout<<"Game Over!!"<<endl;
         Save();
         return 0;
     }
+    cout<<"_______________________________________________________"<<endl;
     cout<<"You have won the GAME!!"<<endl;
     Save();
     return 0;
