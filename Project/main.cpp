@@ -107,10 +107,9 @@ void getFile(){
         }
     }
     inFile.close();
+
     ifstream Score;Score.open("Scores.txt");
-    while(!Score.eof()){
-        Score>>sname;
-        if(sname == "eof") break;
+    while(Score>>sname && sname != "eof"){
         Score>>cur>>hi;
         mp[sname] = {cur,hi};
     }
