@@ -133,6 +133,7 @@ int main()
     cout<<"_______________________________________________________"<<endl;
     if(ask(indx - 1,pName) == -1){
         if(leave) {Save();return 0;}
+        cout<<"_______________________________________________________"<<endl;
         cout<<"Game Over!!"<<endl;
         Save();
         return 0;
