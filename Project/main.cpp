@@ -51,7 +51,7 @@ int ask(int field,string player){
         q = rnd();
         cout<<"_______________________________________________________"<<endl;
         cout<<ques[field][q].qu<<endl<<ques[field][q].ansr<<endl<<"Choose an answer [1-4]: ";
-        t = 5;cin>>ans;
+        cin>>ans;
         if(!ErrorChecking(ans,1,4,1)) {leave = true;return -1;}
         if(ans == ques[field][q].ri){
             cout<<"You got it right!!"<<endl;
@@ -92,7 +92,7 @@ void Field(int turn){
     }
     cout<<"1.Capitals"<<endl<<"2.History"<<endl<<"3.Sports"<<endl<<"4.Math"<<endl<<"5.Disease"<<endl;
     cout<<"Enter number of the field [1-5] : ";
-    t = 5;cin>>indx;
+    cin>>indx;
     ErrorChecking(indx,1,5,0);
 }
 
@@ -101,7 +101,7 @@ void getFile(){
     string a,b;int ans;
     for(int i=0;i<5;i++){
         for(int j=0;j<20;j++){
-            a.clear();b.clear();ans = -1;
+            a.clear();b.clear();
             getline(inFile,a,'"');getline(inFile,b,'"');inFile>>ans;
             ques[i][j].qu = a,ques[i][j].ansr = b,ques[i][j].ri = ans;
         }
@@ -123,7 +123,6 @@ int main()
     while(in == 3){
         cout<<"1. Start a new game"<<endl<<"2. Load game"<<endl<<"3. Show leaderboards"<<endl<<"Enter number [1-3] : ";
         cin>>in;
-        t = 5;
         if(!ErrorChecking(in,1,3,1)) return 0;
         if(in == 3) ShowScore();
     }
@@ -132,7 +131,7 @@ int main()
     Field(0);if(!t) return 0;
     cout<<"_______________________________________________________"<<endl;
     if(ask(indx - 1,pName) == -1){
-        if(leave) {Save();return 0;}
+        if(leave) {Save();cout<<"Good Bye!"<<endl;return 0;}
         cout<<"_______________________________________________________"<<endl;
         cout<<"Game Over!!"<<endl;
         Save();
@@ -140,7 +139,7 @@ int main()
     }
     Field(1);if(!t) return 0;
     if(ask(indx - 1,pName) == -1){
-        if(leave) {Save();return 0;}
+        if(leave) {Save();cout<<"Good Bye!"<<endl;return 0;}
         cout<<"_______________________________________________________"<<endl;
         cout<<"Game Over!!"<<endl;
         Save();
